@@ -1,0 +1,128 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Form-->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header">Administracion de productos</div>
+        <div class="card-body">
+          <form #productForm="ngForm">
+            <div class="form-group d-flex flex-column">
+              <input
+                type="hidden"
+                id="_id"
+                name="_id"
+                #name="ngModel"
+                [(ngModel)]="productService.selectedProduct._id"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group d-flex flex-column">
+              <label for="name">Nombre Producto</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                #name="ngModel"
+                [(ngModel)]="productService.selectedProduct.name"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group d-flex flex-column">
+              <label for="price">Precio del Producto</label>
+              <input
+                type="text"
+                id="price"
+                name="price"
+                #name="ngModel"
+                [(ngModel)]="productService.selectedProduct.price"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group d-flex flex-column">
+              <label for="category">Categoria del Producto</label>
+              <input
+                type="text"
+                id="category"
+                name="category"
+                #name="ngModel"
+                [(ngModel)]="productService.selectedProduct.category"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group d-flex flex-column">
+              <label for="brand">Marca del Producto</label>
+              <input
+                type="text"
+                id="brand"
+                name="brand"
+                #name="ngModel"
+                [(ngModel)]="productService.selectedProduct.brand"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group d-flex flex-column">
+              <label for="imgUrl">Url Imagen del Producto</label>
+              <input
+                type="text"
+                id="imgUrl"
+                name="imgUrl"
+                #name="ngModel"
+                [(ngModel)]="productService.selectedProduct.imgUrl"
+                class="form-control"
+              />
+            </div>
+            <button
+              class="btn btn-success mx-2"
+              (click)="createService(productForm)"
+            >
+              Guardar
+            </button>
+            <button class="btn btn-info mx-2" (click)="cleanForm()">
+              Limpiar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Tabla -->
+    <div class="col-md-8">
+      <table class="table table-striped">
+        <thead>
+          <th>Nombre</th>
+          <th>
+            <button class="btn btn-primary" (click)="filterByPrice()">
+              Precio
+            </button>
+          </th>
+          <th>
+            <button class="btn btn-primary btn-block" (click)="filterByDate()">
+              Fecha
+            </button>
+          </th>
+          <th>Category</th>
+          <th>Marca</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productService.products">
+            <td>{{ producto.name }}</td>
+            <td>{{ producto.price }}</td>
+            <td>{{ producto.updatedAt }}</td>
+            <td>{{ producto.category }}</td>
+            <td>{{ producto.brand }}</td>
+            <!-- Buttons -->
+            <td>
+              <a (click)="updateService(producto)" class="mx-2 btn btn-warning"
+                >Editar</a
+              >
+              <a
+                (click)="deleteService(producto._id)"
+                class="mx-2 btn btn-danger"
+                >Eliminar</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

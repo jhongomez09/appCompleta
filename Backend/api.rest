@@ -1,0 +1,31 @@
+###
+GET http://localhost:5000
+
+###
+POST http://localhost:5000/api
+Content-Type: application/json
+
+{
+    "name": "laptop",
+    "price": "1400000",
+    "category": "Computing",
+    "brand": "ChromeBook",
+    "imgUrl": "https://conceptodefinicion.de/wp-content/uploads/2014/10/Laptop-2.jpg"
+}
+
+###
+GET http://localhost:5000/api
+
+###
+GET http://localhost:5000/api/607635964cb9d01f18eb4f67
+
+###
+PUT http://localhost:5000/api/6075051e2e33bd033c88930a
+Content-Type: application/json
+
+{
+    "brand": "pollito"
+}
+
+###Borrar un registr
+DELETE http://localhost:5000/api/607e1efcdec7fb224468f21f

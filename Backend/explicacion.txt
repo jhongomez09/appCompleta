@@ -1,0 +1,14 @@
+npm install <modulos a usar>
+
+express === framework que me permite crear y administrar un api
+morgan === esta a la escucha de las solicitudes que se le hacen al api y muestra la info 
+           por consola
+
+nodemon === Rearranca el servidor cuando se le hacen cambios al server
+
+mongoose === Permite conectar e interactuar con la base de datos desde un app server
+
+@babel/core === instalar en si el babel
+@babel/cli === permite usar babel desde la consola
+@babel/node === utilizar babel a traves de node
+@babel/preset-env === permite utilizar las ultimas caracteristicas de babel

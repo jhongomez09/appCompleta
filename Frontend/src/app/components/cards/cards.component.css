@@ -1,0 +1,10 @@
+.card-btn-color {
+    color: #fff;
+    border: 0;
+    background: linear-gradient(90deg, rgba(34,135,195,1) 0%, rgba(45,253,156,1) 100%);
+}
+
+.card-btn-color:hover {
+    background: yellow;
+    color: black ;
+}

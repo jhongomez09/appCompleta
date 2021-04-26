@@ -1,0 +1,12 @@
+<div class="d-flex flex-wrap justify-content-center">
+    <div *ngFor="let producto of productService.products" class="m-4">
+        <div class="card" style="width: 18rem;">
+            <img src={{producto.imgUrl}} class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{producto.brand}}</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button (click)="accept()" class="btn card-btn-color">Comprar!</button>
+            </div>
+        </div>
+    </div>
+</div>
